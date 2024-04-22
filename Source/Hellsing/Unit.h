@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "PaperCharacter.h"
 #include "UnitStats.h"
+#include "PaperFlipbook.h"
+#include "PaperFlipbookComponent.h"
 #include "Unit.generated.h"
 
 /**

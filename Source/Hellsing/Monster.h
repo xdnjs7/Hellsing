@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Unit.h"
+#include "PaperFlipbook.h"
+#include "PaperFlipbookComponent.h"
 #include "Monster.generated.h"
 
 /**
