@@ -4,16 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "Unit.h"
-#include "Mercenary.generated.h"
+#include "Monster.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class HELLSING_API AMercenary : public AUnit
+class HELLSING_API AMonster : public AUnit
 {
 	GENERATED_BODY()
-
-public:
-	AMercenary();
+	
 };
