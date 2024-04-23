@@ -63,25 +63,25 @@ void AMercenary::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &AMercenary::MoveForward);
+	//PlayerInputComponent->BindAxis("MoveForward", this, &AMercenary::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AMercenary::MoveRight);
 
-	PlayerInputComponent->BindAction("LeftClick", IE_Pressed, this, &AMercenary::OnMouseClick);
+	PlayerInputComponent->BindAction("RightClick", IE_Pressed, this, &AMercenary::OnMouseClick);
 }
 
-void AMercenary::MoveForward(float Value)
-{
-	if (Value != 0.0f)
-	{
-		IsMoving = true;
-		FVector Direction = FVector(0, 1, 0);
-		AddMovementInput(Direction, Value * MoveSpeed);
-	}
-	else
-	{
-		IsMoving = false;
-	}
-}
+//void AMercenary::MoveForward(float Value)
+//{
+//	if (Value != 0.0f)
+//	{
+//		//IsMoving = true;
+//		FVector Direction = FVector(0, 1, 0);
+//		AddMovementInput(Direction, Value * MoveSpeed);
+//	}
+//	else
+//	{
+//		//IsMoving = false;
+//	}
+//}
 
 void AMercenary::MoveRight(float Value)
 {

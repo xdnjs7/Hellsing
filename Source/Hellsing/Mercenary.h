@@ -35,14 +35,17 @@ public:		// 프로퍼티
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
 	UPaperFlipbook* WalkFlipbook;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
 	bool IsMoving = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
 	float MoveSpeed = 10.0f;
 
 
 public:		// 함수
 
-	UFUNCTION()
-	void MoveForward(float Value);
+	//UFUNCTION()
+	//void MoveForward(float Value);
 
 	UFUNCTION()
 	void MoveRight(float Value);
