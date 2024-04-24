@@ -20,37 +20,35 @@ class HELLSING_API AMercenary : public AUnit
 public:
 	AMercenary();
 
-protected:
-	virtual void BeginPlay() override;
+
+	//virtual void BeginPlay() override;
 
 public:
-	virtual void Tick(float DeltaTime) override;
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	//virtual void Tick(float DeltaTime) override;
+	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-public:		// 프로퍼티
+	//UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Animations")
+	//UPaperFlipbook* IdleFlipbook;
 
-	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Animations")
-	UPaperFlipbook* IdleFlipbook;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
+	//UPaperFlipbook* WalkFlipbook;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
-	UPaperFlipbook* WalkFlipbook;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
+	//UPaperFlipbook* AxeFlipbook;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
-	bool IsMoving = false;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
+	//bool IsMoving = false;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
-	float MoveSpeed = 10.0f;
-
-
-public:		// 함수
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
+	//float MoveSpeed = 10.0f;
 
 	//UFUNCTION()
 	//void MoveForward(float Value);
 
-	UFUNCTION()
-	void MoveRight(float Value);
+	//UFUNCTION()
+	//void MoveRight(float Value);
 
-	UFUNCTION()
-	void OnMouseClick();
+	//UFUNCTION()
+	//void OnMouseClick();
 
 };
