@@ -16,27 +16,27 @@ AMercenary::AMercenary()
 	stats.Level = 1;
 
 	// IdleFlipbook에 Idle을 할당
-	static ConstructorHelpers::FObjectFinder<UPaperFlipbook> IdleFinder(TEXT("/Game/Resources/PaperFlipBook/Idle"));
-	if (IdleFinder.Succeeded())
-	{
-		IdleFlipbook = IdleFinder.Object;
-		UE_LOG(LogTemp, Warning, TEXT("Idle Flipbook is loaded"));
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Idle Flipbook is not loaded"));
-	}
+	//static ConstructorHelpers::FObjectFinder<UPaperFlipbook> IdleFinder(TEXT("/Game/Resources/PaperFlipBook/Idle"));
+	//if (IdleFinder.Succeeded())
+	//{
+	//	IdleFlipbook = IdleFinder.Object;
+	//	UE_LOG(LogTemp, Warning, TEXT("Idle Flipbook is loaded"));
+	//}
+	//else
+	//{
+	//	UE_LOG(LogTemp, Warning, TEXT("Idle Flipbook is not loaded"));
+	//}
 
-	// WalkFlipbook에 Walk를 할당
-	static ConstructorHelpers::FObjectFinder<UPaperFlipbook> WalkFinder(TEXT("/Game/Resources/PaperFlipBook/Walk"));
-	if (WalkFinder.Succeeded())
-	{
-		WalkFlipbook = WalkFinder.Object;
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Walk Animation is not loaded"));
-	}
+	//// WalkFlipbook에 Walk를 할당
+	//static ConstructorHelpers::FObjectFinder<UPaperFlipbook> WalkFinder(TEXT("/Game/Resources/PaperFlipBook/Walk"));
+	//if (WalkFinder.Succeeded())
+	//{
+	//	WalkFlipbook = WalkFinder.Object;
+	//}
+	//else
+	//{
+	//	UE_LOG(LogTemp, Warning, TEXT("Walk Animation is not loaded"));
+	//}
 
 }
 
@@ -51,11 +51,11 @@ void AMercenary::Tick(float DeltaTime)
 
 	if (IsMoving)
 	{
-		GetSprite()->SetFlipbook(WalkFlipbook);
+		//GetSprite()->SetFlipbook(WalkFlipbook);
 	}
 	else
 	{
-		GetSprite()->SetFlipbook(IdleFlipbook);
+		//GetSprite()->SetFlipbook(IdleFlipbook);
 	}
 }
 
@@ -64,7 +64,7 @@ void AMercenary::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	//PlayerInputComponent->BindAxis("MoveForward", this, &AMercenary::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AMercenary::MoveRight);
+	//PlayerInputComponent->BindAxis("MoveRight", this, &AMercenary::MoveRight);
 
 	PlayerInputComponent->BindAction("RightClick", IE_Pressed, this, &AMercenary::OnMouseClick);
 }
