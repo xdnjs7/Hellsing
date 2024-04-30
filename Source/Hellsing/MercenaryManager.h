@@ -5,7 +5,7 @@
 #include "Mercenary.h"
 #include "MercenaryManager.generated.h"
 
-UCLASS()
+UCLASS(BlueprintType)
 class HELLSING_API UMercenaryManager : public UObject
 {
 	GENERATED_BODY()

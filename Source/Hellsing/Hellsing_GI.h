@@ -25,4 +25,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Party")
 	bool RemoveFromParty(AMercenary* Mercenary);
+
+	UFUNCTION(BlueprintCallable, Category = "Mercenary")
+	UMercenaryManager* GetMercenaryManager() const;
 };
