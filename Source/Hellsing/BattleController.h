@@ -13,5 +13,20 @@ UCLASS()
 class HELLSING_API ABattleController : public APlayerController
 {
 	GENERATED_BODY()
-	
+
+public:
+	int ActionPoints;
+	bool bIsPlayerTurn;
+
+public:
+	ABattleController();
+
+	UFUNCTION(BlueprintCallable, Category = "Battle")
+	void SetActionPoints(int Points);
+
+	UFUNCTION(BlueprintCallable, Category = "Battle")
+	int GetActionPoints();
+
+	UFUNCTION(BlueprintCallable, Category = "Battle")
+	void TestFunction();
 };
