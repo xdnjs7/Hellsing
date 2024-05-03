@@ -2,7 +2,8 @@
 
 UHellsing_GI::UHellsing_GI()
 {
-   	MercenaryManager = NewObject<UMercenaryManager>();
+    // MercenaryManager 객체 생성
+    MercenaryManager = NewObject<UMercenaryManager>();
 }
 
 UMercenaryManager* UHellsing_GI::GetMercenaryManager() const
@@ -18,15 +19,15 @@ bool UHellsing_GI::AddToParty(AMercenary* Mercenary)
         // Mercenary가 유효한지 확인
         if (Mercenary)
         {
+            // 파티에 멤버 추가
             PartyMembers.Add(Mercenary);
             return true;
         }
         else
         {
-			// Mercenary가 유효하지 않음
-			return false;
-		}
-
+            // Mercenary가 유효하지 않음
+            return false;
+        }
     }
     else
     {
@@ -38,5 +39,12 @@ bool UHellsing_GI::AddToParty(AMercenary* Mercenary)
 
 bool UHellsing_GI::RemoveFromParty(AMercenary* Mercenary)
 {
+    // 파티에서 멤버 제거
     return PartyMembers.Remove(Mercenary) > 0;
+}
+
+TArray<AMercenary*> UHellsing_GI::GetPartyMembers() const
+{
+    // 파티 멤버 배열 반환
+    return PartyMembers;
 }
