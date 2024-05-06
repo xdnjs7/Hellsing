@@ -5,14 +5,14 @@
 #include "Mercenary.h"
 #include "MercenaryManager.generated.h"
 
-UCLASS()
+UCLASS(BlueprintType)
 class HELLSING_API UMercenaryManager : public UObject
 {
 	GENERATED_BODY()
 	
 public:
-	TArray<AMercenary*> Mercenaries;
+    TArray<AMercenary*> Mercenaries; // Mercenary 객체 배열
 
-	UFUNCTION(BlueprintCallable, Category = "Mercenary")
-	AMercenary* GetMercenary(int32 Index);
+    UFUNCTION(BlueprintCallable, Category = "Mercenary")
+    AMercenary* GetMercenary(int32 Index); // 인덱스에 해당하는 Mercenary 반환 함수
 };

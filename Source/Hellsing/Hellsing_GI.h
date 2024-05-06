@@ -15,14 +15,20 @@ public:
 
 	UHellsing_GI();
 
-	TArray<AMercenary*> PartyMembers;
+    TArray<AMercenary*> PartyMembers; // 파티 멤버 배열
 
-	UPROPERTY()
-	UMercenaryManager* MercenaryManager;
+    UPROPERTY()
+    UMercenaryManager* MercenaryManager; // MercenaryManager 객체
 
-	UFUNCTION(BlueprintCallable, Category = "Party")
-	bool AddToParty(AMercenary* Mercenary);
+    UFUNCTION(BlueprintCallable, Category = "Party")
+    bool AddToParty(AMercenary* Mercenary); // 파티에 멤버 추가 함수
 
-	UFUNCTION(BlueprintCallable, Category = "Party")
-	bool RemoveFromParty(AMercenary* Mercenary);
+    UFUNCTION(BlueprintCallable, Category = "Party")
+    bool RemoveFromParty(AMercenary* Mercenary); // 파티에서 멤버 제거 함수
+
+    UFUNCTION(BlueprintCallable, Category = "Mercenary")
+    UMercenaryManager* GetMercenaryManager() const; // MercenaryManager 가져오는 함수
+
+    UFUNCTION(BlueprintPure, Category = "Party")
+    TArray<AMercenary*> GetPartyMembers() const; // 파티 멤버 가져오는 함수
 };
