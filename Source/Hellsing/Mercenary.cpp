@@ -26,3 +26,16 @@ void AMercenary::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+void AMercenary::Attack()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Attack"));
+}
+
+void AMercenary::MerTakeDamage(int damage)
+{
+	stats.Health -= damage;
+	if (stats.Health <= 0)
+	{
+		Destroy();
+	}
+}

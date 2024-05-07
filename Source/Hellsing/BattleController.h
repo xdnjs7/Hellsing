@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Monster.h"
+#include "Mercenary.h"
 #include "BattleController.generated.h"
 
 /**
@@ -29,4 +31,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Battle")
 	void TestFunction();
+
+	UFUNCTION(BlueprintCallable, Category = "Battle")
+	AMonster* GetTargetMonster();
+
 };

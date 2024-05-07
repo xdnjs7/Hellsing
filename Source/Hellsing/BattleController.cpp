@@ -6,6 +6,10 @@
 ABattleController::ABattleController()
 {
 	bIsPlayerTurn = false;
+
+	SetShowMouseCursor(true);
+
+	bEnableClickEvents = true;
 }
 
 void ABattleController::SetActionPoints(int Points)
@@ -21,4 +25,21 @@ int ABattleController::GetActionPoints()
 void ABattleController::TestFunction()
 {
 	UE_LOG(LogTemp, Warning, TEXT("TestFunction called"));
+}
+
+AMonster* ABattleController::GetTargetMonster()
+{
+	FHitResult Hit;
+	GetHitResultUnderCursor(ECC_Visibility, false, Hit);
+	
+		if (Hit.bBlockingHit)
+		{
+			AMonster* Monster = Cast<AMonster>(Hit.GetActor());
+			if (Monster)
+			{
+				return Monster;
+			}
+		}
+
+	return nullptr;
 }

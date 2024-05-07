@@ -24,6 +24,12 @@ public:
 
 public:
 
+	void Attack();
+
+	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent)
+	void AttackAction();
+	UFUNCTION(BlueprintCallable)
+	void MerTakeDamage(int damage);
 	
 
 };
