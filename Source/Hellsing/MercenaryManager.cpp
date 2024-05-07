@@ -14,3 +14,11 @@ AMercenary* UMercenaryManager::GetMercenary(int32 Index)
     }
     return nullptr;
 }
+
+void UMercenaryManager::AddMercenary(AMercenary* Mercenary)
+{
+    if (Mercenary && !Mercenaries.Contains(Mercenary))
+    {
+        Mercenaries.Add(Mercenary);
+    }
+}
