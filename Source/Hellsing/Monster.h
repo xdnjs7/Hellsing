@@ -10,5 +10,15 @@ UCLASS()
 class HELLSING_API AMonster : public AUnit
 {
 	GENERATED_BODY()
+
+public:
+	AMonster();
 	
+
+	UFUNCTION(BlueprintCallable)
+	void MobTakeDamage(int damage);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void AttackAction();
+
 };

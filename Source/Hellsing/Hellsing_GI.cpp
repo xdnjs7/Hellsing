@@ -37,16 +37,32 @@ bool UHellsing_GI::AddToParty(AMercenary* Mercenary)
     return false;
 }
 
-TArray<AMercenary*> UHellsing_GI::GetPartyMembers() const
-{
-    UE_LOG(LogTemp, Warning, TEXT("Number of Party Members: %d"), PartyMembers.Num());
-
-    // 파티 멤버 배열 반환
-    return PartyMembers;
-}
-
 bool UHellsing_GI::RemoveFromParty(AMercenary* Mercenary)
 {
     // 파티에서 멤버 제거
     return PartyMembers.Remove(Mercenary) > 0;
+}
+
+TArray<AMercenary*> UHellsing_GI::GetPartyMembers() const
+{
+    // 파티 멤버 배열 반환
+    return PartyMembers;
+}
+
+void UHellsing_GI::SetTargetMonster(AMonster* Monster)
+{
+	// 타겟 몬스터 설정
+	TargetMonster = Monster;
+}
+
+void UHellsing_GI::ClearTargetMonster()
+{
+	// 타겟 몬스터 초기화
+	TargetMonster = nullptr;
+}
+
+void UHellsing_GI::SetSelectMode(bool Mode)
+{
+	// 선택 모드 설정
+	SelectMode = Mode;
 }

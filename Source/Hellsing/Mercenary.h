@@ -5,6 +5,7 @@
 #include "Components/InputComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Components/WidgetComponent.h"
 #include "Mercenary.generated.h"
 
 UCLASS()
@@ -15,41 +16,20 @@ class HELLSING_API AMercenary : public AUnit
 public:
 	AMercenary();
 
-	bool IsInUse() const { return bInUse; } // 사용중인지 여부 반환 함수
-	void SetInUse(bool bUse) { bInUse = bUse; } // 사용중인지 여부 설정 함수
 
-private:
+	virtual void BeginPlay() override;
 
-	bool bInUse = false; // 사용중인지 여부
+	virtual void Tick(float DeltaTime) override;
 
-	//virtual void BeginPlay() override;
 
-//public:
-	//virtual void Tick(float DeltaTime) override;
-	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+public:
 
-	//UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Animations")
-	//UPaperFlipbook* IdleFlipbook;
+	void Attack();
 
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
-	//UPaperFlipbook* WalkFlipbook;
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
-	//UPaperFlipbook* AxeFlipbook;
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
-	//bool IsMoving = false;
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
-	//float MoveSpeed = 10.0f;
-
-	//UFUNCTION()
-	//void MoveForward(float Value);
-
-	//UFUNCTION()
-	//void MoveRight(float Value);
-
-	//UFUNCTION()
-	//void OnMouseClick();
+	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent)
+	void AttackAction();
+	UFUNCTION(BlueprintCallable)
+	void MerTakeDamage(int damage);
+	
 
 };
