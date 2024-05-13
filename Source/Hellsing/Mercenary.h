@@ -15,10 +15,16 @@ class HELLSING_API AMercenary : public AUnit
 public:
 	AMercenary();
 
+	bool IsInUse() const { return bInUse; } // 사용중인지 여부 반환 함수
+	void SetInUse(bool bUse) { bInUse = bUse; } // 사용중인지 여부 설정 함수
+
+private:
+
+	bool bInUse = false; // 사용중인지 여부
 
 	//virtual void BeginPlay() override;
 
-public:
+//public:
 	//virtual void Tick(float DeltaTime) override;
 	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
