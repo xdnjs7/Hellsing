@@ -3,7 +3,9 @@
 UHellsing_GI::UHellsing_GI()
 {
     // MercenaryManager 객체 생성
-    MercenaryManager = NewObject<UMercenaryManager>();
+    //MercenaryManager = NewObject<UMercenaryManager>();
+
+    TargetMonster = nullptr;
 }
 
 UMercenaryManager* UHellsing_GI::GetMercenaryManager() const
@@ -37,16 +39,18 @@ bool UHellsing_GI::AddToParty(AMercenary* Mercenary)
     return false;
 }
 
+TArray<AMercenary*> UHellsing_GI::GetPartyMembers() const
+{
+    UE_LOG(LogTemp, Warning, TEXT("Number of Party Members: %d"), PartyMembers.Num());
+
+    // 파티 멤버 배열 반환
+    return PartyMembers;
+}
+
 bool UHellsing_GI::RemoveFromParty(AMercenary* Mercenary)
 {
     // 파티에서 멤버 제거
     return PartyMembers.Remove(Mercenary) > 0;
-}
-
-TArray<AMercenary*> UHellsing_GI::GetPartyMembers() const
-{
-    // 파티 멤버 배열 반환
-    return PartyMembers;
 }
 
 void UHellsing_GI::SetTargetMonster(AMonster* Monster)
