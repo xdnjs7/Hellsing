@@ -39,3 +39,13 @@ void AMercenary::MerTakeDamage(int damage)
 		Destroy();
 	}
 }
+
+bool AMercenary::IsInUse() const
+{
+	return bInUse;
+}
+
+void AMercenary::SetInUse(bool bUse)
+{
+	bInUse = bUse;
+}
