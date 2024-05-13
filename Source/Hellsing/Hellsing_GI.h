@@ -4,6 +4,7 @@
 #include "Engine/GameInstance.h"
 #include "Mercenary.h"
 #include "MercenaryManager.h"
+#include "Monster.h"
 #include "Hellsing_GI.generated.h"
 
 UCLASS()
@@ -14,8 +15,29 @@ class HELLSING_API UHellsing_GI : public UGameInstance
 public:
 
 	UHellsing_GI();
-
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TArray<AMercenary*> PartyMembers; // 파티 멤버 배열
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TArray<AMonster*> MonsterMembers;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    AMonster* TargetMonster; // 타겟 몬스터
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool SelectMode;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int ActionPoint; // 행동력
+
+    UFUNCTION(BlueprintCallable)
+    void SetTargetMonster(AMonster* Monster); // 타겟 몬스터 설정 함수
+    UFUNCTION(BlueprintCallable)
+    void ClearTargetMonster(); // 타겟 몬스터 초기화 함수
+
+    UFUNCTION(BlueprintCallable)
+    void SetSelectMode(bool Mode); // 선택 모드 설정 함수
 
     UPROPERTY()
     UMercenaryManager* MercenaryManager; // MercenaryManager 객체

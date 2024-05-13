@@ -5,6 +5,7 @@
 #include "Components/InputComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Components/WidgetComponent.h"
 #include "Mercenary.generated.h"
 
 UCLASS()
@@ -16,34 +17,19 @@ public:
 	AMercenary();
 
 
-	//virtual void BeginPlay() override;
+	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaTime) override;
+
 
 public:
-	//virtual void Tick(float DeltaTime) override;
-	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	//UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Animations")
-	//UPaperFlipbook* IdleFlipbook;
+	void Attack();
 
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
-	//UPaperFlipbook* WalkFlipbook;
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations")
-	//UPaperFlipbook* AxeFlipbook;
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
-	//bool IsMoving = false;
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterMovement")
-	//float MoveSpeed = 10.0f;
-
-	//UFUNCTION()
-	//void MoveForward(float Value);
-
-	//UFUNCTION()
-	//void MoveRight(float Value);
-
-	//UFUNCTION()
-	//void OnMouseClick();
+	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent)
+	void AttackAction();
+	UFUNCTION(BlueprintCallable)
+	void MerTakeDamage(int damage);
+	
 
 };
