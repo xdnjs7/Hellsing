@@ -31,6 +31,13 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     int ActionPoint; // 행동력
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int Gold=0; // 골드
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int Exp=0; // 골드
+
+
+
     UFUNCTION(BlueprintCallable)
     void SetTargetMonster(AMonster* Monster); // 타겟 몬스터 설정 함수
     UFUNCTION(BlueprintCallable)
