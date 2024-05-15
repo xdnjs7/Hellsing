@@ -12,5 +12,6 @@ class HELLSING_API AUnit : public APaperCharacter
 {
 	GENERATED_BODY()
 public:
-	UnitStats stats;
+	UPROPERTY(EditAnywhere)
+	FUniStats stats;
 };
