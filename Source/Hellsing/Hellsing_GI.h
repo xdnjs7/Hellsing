@@ -32,9 +32,9 @@ public:
     int ActionPoint; // Çàµ¿·Â
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    int Gold=0; // °ñµå
+    int Gold; // °ñµå
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    int Exp=0; // °ñµå
+    int Exp; // °æÇèÄ¡
 
 
 
