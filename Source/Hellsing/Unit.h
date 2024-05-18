@@ -12,6 +12,6 @@ class HELLSING_API AUnit : public APaperCharacter
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	FUniStats stats;
 };

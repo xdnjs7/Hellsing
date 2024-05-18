@@ -15,7 +15,7 @@ public:
 	~UnitStats();
 };
 
-USTRUCT(Atomic,BlueprintType)
+USTRUCT(BlueprintType)
 struct FUniStats
 {
 	GENERATED_USTRUCT_BODY()
