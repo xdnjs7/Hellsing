@@ -6,6 +6,8 @@ UHellsing_GI::UHellsing_GI()
     //MercenaryManager = NewObject<UMercenaryManager>();
 
     TargetMonster = nullptr;
+    Exp = 0;
+    Gold = 0;
 }
 
 UMercenaryManager* UHellsing_GI::GetMercenaryManager() const
