@@ -10,7 +10,7 @@ AMercenary::AMercenary()
 	stats.MaxHealth = 100;
 	stats.Speed = 10;
 	stats.Level = 1;
-
+	stats.IsActive = false;
 
 	
 }
