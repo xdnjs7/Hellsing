@@ -34,10 +34,6 @@ void AMercenary::Attack()
 void AMercenary::MerTakeDamage(int damage)
 {
 	stats.Health -= damage;
-	if (stats.Health <= 0)
-	{
-		Destroy();
-	}
 }
 
 bool AMercenary::IsInUse() const
