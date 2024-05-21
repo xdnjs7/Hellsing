@@ -35,4 +35,6 @@ public:
 	int Defense;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int Speed;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool IsActive; // 현재 보유 여부
 };
