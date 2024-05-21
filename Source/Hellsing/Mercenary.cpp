@@ -10,7 +10,7 @@ AMercenary::AMercenary()
 	stats.MaxHealth = 100;
 	stats.Speed = 10;
 	stats.Level = 1;
-
+	stats.IsActive = false;
 
 	
 }
@@ -34,10 +34,6 @@ void AMercenary::Attack()
 void AMercenary::MerTakeDamage(int damage)
 {
 	stats.Health -= damage;
-	if (stats.Health <= 0)
-	{
-		Destroy();
-	}
 }
 
 bool AMercenary::IsInUse() const

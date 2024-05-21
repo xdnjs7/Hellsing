@@ -14,8 +14,5 @@ AMonster::AMonster()
 void AMonster::MobTakeDamage(int damage)
 {
 	stats.Health -= damage;
-	if (stats.Health <= 0)
-	{
-		Destroy();
-	}
+
 }
