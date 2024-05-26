@@ -14,6 +14,4 @@ class HELLSING_API AUnit : public APaperCharacter
 public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	FUniStats stats;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool isDead;
 };
