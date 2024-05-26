@@ -31,5 +31,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void MerTakeDamage(int damage);
 	
+	bool IsInUse() const; // 사용중인지 여부 반환 함수
+	void SetInUse(bool bUse); // 사용중인지 여부 설정 함수
 
+private:
+
+	bool bInUse = false; // 사용중인지 여부
 };

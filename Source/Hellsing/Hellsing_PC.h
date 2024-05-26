@@ -14,24 +14,4 @@ public:
 	AHellsing_PC();
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
-
-public:
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = UI)
-	TSubclassOf<class UUserWidget> TitleUIClass;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = UI)
-	TSubclassOf<class UUserWidget> MainUIClass;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = UI)
-	TSubclassOf<class UUserWidget> TownUIClass;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = UI)
-	TSubclassOf<class UUserWidget> ExploreUIClass;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = UI)
-	TSubclassOf<class UUserWidget> SaveSlotUIClass;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = UI)
-	TSubclassOf<class UUserWidget> OptionsUIClass;
 };

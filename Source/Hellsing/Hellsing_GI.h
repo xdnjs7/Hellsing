@@ -31,6 +31,13 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     int ActionPoint; // 행동력
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int Gold; // 골드
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int Exp; // 경험치
+
+
+
     UFUNCTION(BlueprintCallable)
     void SetTargetMonster(AMonster* Monster); // 타겟 몬스터 설정 함수
     UFUNCTION(BlueprintCallable)
@@ -42,15 +49,18 @@ public:
     UPROPERTY()
     UMercenaryManager* MercenaryManager; // MercenaryManager 객체
 
-    UFUNCTION(BlueprintCallable, Category = "Party")
-    bool AddToParty(AMercenary* Mercenary); // 파티에 멤버 추가 함수
-
-    UFUNCTION(BlueprintCallable, Category = "Party")
-    bool RemoveFromParty(AMercenary* Mercenary); // 파티에서 멤버 제거 함수
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Party")
+    int32 LastSpawnedActorIndex = 0; // 이전에 생성된 액터의 인덱스를 저장하는 변수
 
     UFUNCTION(BlueprintCallable, Category = "Mercenary")
     UMercenaryManager* GetMercenaryManager() const; // MercenaryManager 가져오는 함수
 
+    UFUNCTION(BlueprintCallable, Category = "Party")
+    bool AddToParty(AMercenary* Mercenary); // 파티에 멤버 추가 함수
+
     UFUNCTION(BlueprintPure, Category = "Party")
     TArray<AMercenary*> GetPartyMembers() const; // 파티 멤버 가져오는 함수
+
+    UFUNCTION(BlueprintCallable, Category = "Party")
+    bool RemoveFromParty(AMercenary* Mercenary); // 파티에서 멤버 제거 함수
 };
