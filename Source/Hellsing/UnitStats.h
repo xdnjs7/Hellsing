@@ -26,15 +26,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int Level;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Health;
+	float Health;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int MaxHealth;
+	float MaxHealth;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Attack;
+	float Attack;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Defense;
+	float Defense;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Speed;
+	float Speed;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool IsActive; // 현재 보유 여부
 };
